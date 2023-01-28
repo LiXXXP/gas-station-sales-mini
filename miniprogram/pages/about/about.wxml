@@ -1,0 +1,15 @@
+<view class="about container">
+  <view class="flex flex-column flex-only-center">
+    <image class="logo" src="../../assets/imgs/logo.png"></image>
+    <text class="version">版本V1.1</text>
+  </view>
+  <view class="protocol">
+    <view class="title">
+      <text bindtap="toReadLaw">服务协议</text>
+      <text class="separator"> | </text>
+      <text bindtap="toReadConceal">隐私政策</text>
+    </view>
+    <view>本产品服务于北京融耀智屏传媒有限公司</view>
+    <view>为业务人员提供站点位置信息的便捷查询</view>
+  </view>
+</view>

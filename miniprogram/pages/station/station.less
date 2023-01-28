@@ -1,0 +1,118 @@
+/**station.less**/
+.station {
+  position: fixed;
+  background-color: #f7f7f7;
+  .van-ellipsis{
+    color: #515151;
+  }
+  .menuBg{
+    .van-popup{
+      max-height: 500rpx;
+      padding-bottom: 80rpx;
+    }
+  }
+  .search {
+    padding: 0 30rpx;
+    box-sizing: border-box;
+    background-color: #fff;
+    .city {
+      color: #515151;
+      margin-right: 10rpx;
+      .van-dropdown-menu {
+        box-shadow: none;
+      }
+    }
+
+    .select {
+      color: #515151;
+      font-size: 26rpx;
+      .select-icon {
+        width: 36rpx;
+        height: 36rpx;
+        margin-right: 10rpx;
+      }
+    }
+    .select-btns {
+      position: fixed;
+      top:600rpx;
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+      background: #fff;
+    padding: 20rpx 0;
+    }
+  }
+
+  .list {
+    width: 100vw;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+    .list-item {
+      width: 100%;
+      height: 240rpx;
+      padding: 20rpx;
+      margin-top: 16rpx;
+      border-radius: 8rpx;
+      box-sizing: border-box;
+      background-color: #fff;
+      .station-img {
+        width: 200rpx;
+        height: 200rpx;
+        margin-right: 20rpx;
+        border-radius: 10rpx;
+      }
+      .station-info {
+        height: 100%;
+        position: relative;
+        flex: 1;
+        .name {
+          color: #000;
+          width: 380rpx;
+          font-size: 28rpx;
+          font-weight: 600;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        .tag {
+          margin: 18rpx 0;
+          text {
+            color: #f67a45;
+            font-size: 24rpx;
+            border-radius: 4rpx;
+            padding: 4rpx 10rpx;
+            margin-right: 10rpx;
+            box-sizing: border-box;
+            background-color: #fcede3;
+          }
+        }
+        .address {
+          color: #515151;
+          font-size: 24rpx;
+          .text();
+        }
+        .distance {
+          position: absolute;
+          right: 0;
+          top: 0;
+          .distance-icon {
+            width: 48rpx;
+            height: 48rpx;
+          }
+          text {
+            color: #515151;
+            font-size: 24rpx;
+          }
+        }
+      }
+    }
+  }
+  .text {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+  }
+}

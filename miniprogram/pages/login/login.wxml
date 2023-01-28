@@ -1,0 +1,28 @@
+<!-- index.wxml -->
+<view class="container">
+  <view class="login flex flex-column flex-center">
+    <block>
+      <image class="logo" src="../../assets/imgs/logo.png"></image>
+    </block>
+    <block>
+      <view class="check theme-text-color" style="visibility: {{!isShowText?'hidden':'visible'}};">
+        <text>请阅读并勾选用户协议</text>
+        <text class="u-arrow u-arrow-down"></text>
+      </view>
+      <label class="radio" catchtap="radioChange">
+        <radio value="1" color='#FA301F' checked="{{isAuthorize}}" />
+        <text>已阅读并同意</text>
+        <text class="theme-text-color" catchtap="toReadLaw">《法律声明》</text>
+        <text class="theme-text-color" catchtap="toReadConceal">《隐私政策》</text>
+      </label>
+    </block>
+    <block>
+      <button wx:if="{{!isAuthorize}}" class="login-btn theme-background-color" bindtap="lgoin">
+        微信授权登录
+      </button>
+      <button wx:else class="login-btn theme-background-color" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+        微信授权登录
+      </button>
+    </block>
+  </view>
+</view>

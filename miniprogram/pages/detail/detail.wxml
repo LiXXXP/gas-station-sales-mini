@@ -1,0 +1,54 @@
+<loading wx:if="{{!detailData.stationName}}"></loading>
+<view class="detail" wx:if="{{detailData.stationName}}">
+  <view class="station">
+    <view class="name default-text-color">{{detailData.stationName}}</view>
+    <view class="address">{{detailData.address}}</view>
+    <view class="flex flex-only-center flexImg">
+      <scroll-view scroll-x='true'>
+        <view class="flex">
+          <image class="titleImg" wx:if="{{detailData.pictures.length != 0}}" wx:for="{{detailData.pictures}}" wx:for-item="item" wx:key="index" bindtap="getImg" data-item="{{item}}" src="{{item ? imgUrl + '/'+ item : '../../assets/imgs/nopicture.png'}}"></image>
+          <image class="titleImg" wx:if="{{detailData.pictures.length ==0}}" src="../../assets/imgs/nopicture.png"></image>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="distance flex flex-column flex-only-center" catchtap="goMap" data-lat="{{detailData.lat}}" data-lng="{{detailData.lng}}" data-name="{{detailData.stationName}}" data-address="{{detailData.address}}">
+      <image class="distance-icon" src="../../assets/imgs/navigation.png"></image>
+      <text>{{detailData.distance}}</text>
+    </view>
+  </view>
+  <view class="detailText">
+    <view class="title">站点信息</view>
+    <view class="detailList">
+      <view class="{{arrowShow && index == 2 ? 'opacity' : ''}}" wx:for="{{detailList}}" wx:for-item="item" wx:key="index" wx:if="{{arrowShow ? index <3 : true}}">
+        <text>{{item.text}}</text>
+        <text>{{item.value || '-'}}</text>
+      </view>
+    </view>
+    <view wx:if="detailList.length>3" class="arrowBg">
+      <view wx:if="{{arrowShow}}" bindtap="arrow" data-index="0" class="opacityTo">
+        展开
+        <van-icon name="arrow-down" />
+      </view>
+      <view wx:else bindtap="arrow" data-index="1">
+        收起
+        <van-icon name="arrow-up" />
+      </view>
+    </view>
+  </view>
+  <view class="tab">
+    <view class="title">周边快查</view>
+    <van-grid column-num="5" border="{{ false }}" class="tabBg">
+      <van-grid-item use-slot wx:for="{{ detailData.outTags }}" wx:for-item="item" wx:key="index" class="tabText" bindtap="goH5Page" data-url="/ambitus?tagName={{item.tagName}}&innerIcon={{item.innerIcon}}&lat={{detailData.lat}}&lng={{detailData.lng}}">
+        <image src="{{item.outerIcon ? imgUrl + '/'+ item.outerIcon : '../../assets/imgs/nopicture.png'}}" />
+        <text>{{item.tagName}}</text>
+      </van-grid-item>
+    </van-grid>
+  </view>
+  <view class="help" bindtap="goH5Page" data-url="/updating?id={{options.id}}">
+    <view class="title flex flex-between ">
+      站点信息更新
+      <van-icon name="arrow" style="color:#A4A4A5" />
+    </view>
+    <text>信息有误？反馈该地点问题</text>
+  </view>
+</view>

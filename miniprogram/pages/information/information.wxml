@@ -1,0 +1,40 @@
+<view class="information">
+  <loading wx:if="{{!gasData.dataList || loadingShow}}"></loading>
+  <view class="tab  flex flex-around">
+    <text class="{{currentIndex.length == 1 ? 'active':'' }}" bindtap="handlePending">待处理</text>
+    <text class="{{currentIndex.length == 2 ? 'active':'' }}" bindtap="handleComplete">已完成</text>
+  </view>
+  <view class="list">
+    <scroll-view scroll-y   style="height: 90vh;" bindscrolltolower="scrollBtn">
+    <!-- 待处理 -->
+    <block wx:if="{{currentIndex.length === 1}}">
+      <view class="list-item" wx:for="{{dataList}}" wx:for-item="item" wx:key="index">
+        <view class="flex flex-between flex-only-center">
+          <text class="name default-text-color">{{item.stationName}}</text>
+          <text class="time">{{item.createAt}}</text>
+        </view>
+        <view class="address">{{item.address}}</view>
+        <view class="reason">
+          <text>申报原因：{{item.content}}</text>
+        </view>
+      </view>
+    </block>
+    <!-- 已完成 -->
+    <block wx:if="{{currentIndex.length === 2}}">
+      <view class="list-item"  wx:for="{{dataList}}" wx:for-item="item" wx:key="index">
+        <view class="flex flex-between flex-only-center">
+          <text class="name default-text-color">{{item.stationName}}</text>
+          <text class="status reject"  wx:if="{{item.status == 4}}">已驳回</text>
+          <text class="status" wx:if="{{item.status == 2}}">已通过</text>
+        </view>
+        <view class="address">{{item.address}}</view>
+        <view class="address">申报原因：{{item.content}}</view>
+        <view class="reason" wx:if="{{item.rejectReason}}">
+          <text>驳回原因：{{item.rejectReason}}</text>
+        </view>
+      </view>
+    </block>
+      <van-empty description="{{page == 1 ? '暂无数据' :'没有数据了'}}" wx:if="{{dataList.length==0}}"/>
+       </scroll-view>
+  </view>
+</view>

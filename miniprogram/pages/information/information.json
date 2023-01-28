@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-empty": "@vant/weapp/empty/index",
+    "loading":"../../components/loading/loading"
+  },
+  "navigationBarTitleText": "更新记录"
+}

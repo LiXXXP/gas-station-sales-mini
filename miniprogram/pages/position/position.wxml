@@ -1,0 +1,4 @@
+<view class="position">
+    <text>需要获取您的定位位置，帮助您查找附近加油站</text>
+    <text bindtap="position">授权获取位置</text>
+</view>

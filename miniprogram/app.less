@@ -1,0 +1,160 @@
+/**app.wxss**/
+::-webkit-scrollbar {
+  display: none;
+  width: 0 !important;
+  height: 0 !important;
+  -webkit-appearance: none;
+  background: transparent;
+}
+/** 主题字体颜色 **/
+.theme-text-color {
+  color: #FB3834;
+}
+
+/** 主题背景颜色 **/
+.theme-background-color {
+  background: linear-gradient(90deg, #FF4D69 0%, #FA301F 100%);
+}
+
+/** 默认字体颜色 **/
+.default-title-color {
+  color: #131313;
+}
+
+/** 默认字体颜色 **/
+.default-body-color {
+  color: #515151;
+}
+
+/**flex布局**/
+.flex {
+  display: flex;
+  display: -webkit-flex;
+}
+
+.flex-order { /**属性定义排列顺序**/
+  order: 0;
+}
+
+.flex-grow { /**属性定义放大比例**/
+  flex-grow: 0;
+}
+
+.flex-shrink { /**属性定义缩小比例**/
+  flex-shrink: 1;
+}
+
+.flex-basis { /**占据的主轴空间**/
+  flex-basis: auto;
+}
+
+.flex-1 { /**flex-grow, flex-shrink 和 flex-basis的简写**/
+  flex: 0 1 auto;
+}
+
+.flex-self { /**允许单个项目有与其他项目不一样的对齐方式**/
+  align-self: auto;
+}
+
+/**主轴排列方向**/
+.flex-row { /**主轴为水平方向，起点在左端**/
+  flex-direction: row;
+}
+
+.flex-row-reverse { /**主轴为水平方向，起点在右端**/
+  flex-direction: row-reverse;
+}
+
+.flex-column { /**主轴为垂直方向，起点在上沿**/
+  flex-direction: column;
+}
+
+.flex-col-reverse { /**主轴为垂直方向，起点在下沿**/
+  flex-direction: column-reverse;
+}
+
+/**换行**/
+.flex-nowrap { /**不换行**/
+  flex-wrap: nowrap;
+}
+
+.flex-wrap { /**换行，第一行在上方**/
+  flex-wrap: wrap;
+}
+
+.flex-wrap-reverse { /**换行，在第一行的下方**/
+  flex-wrap: wrap-reverse;
+}
+
+/**主轴上的对齐方式**/
+.flex-start { /**左对齐**/
+  justify-content: flex-start;
+}
+
+.flex-end { /**右对齐**/
+  justify-content: flex-end;
+}
+
+.flex-center { /**居中**/
+  justify-content: center;
+}
+
+.flex-between { /**两端对齐**/
+  justify-content: space-between;
+}
+
+.flex-around { /**两侧间隔相等**/
+  justify-content: space-around;
+}
+
+/**交叉轴上的对齐方式**/
+.flex-only-start { /**交叉轴的起点对齐**/
+  align-items: flex-start;
+}
+
+.flex-only-end { /**交叉轴的终点对齐**/
+  align-items: flex-end;
+}
+
+.flex-only-center { /**交叉轴的中点对齐**/
+  align-items: center;
+}
+
+.flex-only-baseline { /**基线对齐**/
+  align-items: baseline;
+}
+
+.flex-only-stretch { /**未设置高度或auto，将占满整个容器的高度**/
+  align-items: stretch;
+}
+
+/**多根轴线的对齐方式**/
+.flex-more-start { /**与交叉轴的起点对齐**/
+  align-content: flex-start;
+}
+
+.flex-more-end { /**与交叉轴的终点对齐**/
+  align-content: flex-end;
+}
+
+.flex-more-center { /**与交叉轴的中点对齐**/
+  align-content: center;
+}
+
+.flex-more-between { /**与交叉轴两端对齐**/
+  align-content: space-between;
+}
+
+.flex-more-around { /**每根轴线两侧间隔相等**/
+  align-content: space-around;
+}
+
+.flex-more-stretch { /**轴线占满整个交叉轴**/
+  align-content: stretch;
+}
+
+.clear:after{
+	content:"";
+	display:block;
+	clear:both;
+}

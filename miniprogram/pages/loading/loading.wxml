@@ -1,0 +1,4 @@
+<view class="start">
+  <image class="logo" src="../../assets/imgs/start-bg.png" lazy-load="false"></image>
+  <view class="slogan default-body-color">中国领先的加油站媒体整合运营商</view>
+</view>

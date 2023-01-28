@@ -1,0 +1,17 @@
+{
+  "usingComponents": {
+    "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
+    "van-dropdown-item": "@vant/weapp/dropdown-item/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-radio": "@vant/weapp/radio/index",
+    "van-radio-group": "@vant/weapp/radio-group/index",
+    "van-sticky": "@vant/weapp/sticky/index",
+    "van-empty": "@vant/weapp/empty/index",
+    "loading": "../../components/loading/loading",
+    "searchPop": "../../components/searchPop/searchPop",
+    "van-skeleton": "@vant/weapp/skeleton/index"
+  },
+  "backgroundTextStyle": "dark",
+  "onReachBottomDistance": 50,
+  "navigationBarTitleText": "加油站"
+}

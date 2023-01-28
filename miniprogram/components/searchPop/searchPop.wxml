@@ -1,0 +1,67 @@
+<view class="searchPop">
+  <view class="search flex flex-between flex-only-center">
+    <image class="positioning" src="../../assets/imgs/positioning.png" />
+    <van-dropdown-menu class="city">
+      <van-dropdown-item value="{{cityId}}" disabled options="{{ citySelection.option }}" />
+    </van-dropdown-menu>
+    <view class="search-input" bindtap="goSearch">
+      <van-cell-group>
+        <van-field auto-focus border="false" disabled="{{toSearch}}" value="{{searchInput}}" placeholder="请输入搜索关键词"
+          bind:change="inputChange" />
+      </van-cell-group>
+      <image class="search-icon" src="../../assets/imgs/search.png"></image>
+    </view>
+    <view class="select flex flex-only-center" bindtap="searchPopupBind">
+      <image class="select-icon" src="../../assets/imgs/screening.png"></image>
+      <text>筛选</text>
+    </view>
+  </view>
+  <!-- 筛选 -->
+  <van-popup show="{{searchPopup}}" position="right" custom-style="width: 75%;height:100%" bind:close="onClose">
+    <view class="searchRt">
+      <scroll-view enhanced show-scrollbar scroll-anchoring scroll-with-animation scroll-y="true"
+        style="width: 100%;height:100vh">
+        <view class="searchItem">
+          <view class="title">广告大屏</view>
+          <view class="searchGroup">
+            <text class="{{item.selected   ?  'choose' : ''}}" wx:for="{{advScreenList}}" wx:for-item="item"
+              wx:key="index" catchtap="advTap" data-item="{{item}}" data-index="{{index}}">{{item.text}}</text>
+          </view>
+        </view>
+        <view class="searchItem">
+          <view class="title">标签选择</view>
+          <view class="searchGroup">
+            <text class="{{item.selected   ?  'choose' : ''}}" wx:for="{{outTagsList}}" wx:for-item="item"
+              wx:key="index" catchtap="outTagsTap" data-item="{{item}}" data-index="{{index}}">{{item.text}}</text>
+          </view>
+        </view>
+        <view class="searchItem">
+          <view class="title">加油站星级</view>
+          <view class="searchGroup">
+            <text class="{{item.selected   ?  'choose' : ''}}" wx:for="{{starsList}}" wx:for-item="item" wx:key="index"
+              catchtap="starTap" data-item="{{item}}" data-index="{{index}}">{{item.text}}</text>
+          </view>
+        </view>
+        <view class="searchItem">
+          <view class="title">经营状况</view>
+          <view class="searchGroup">
+            <text class="{{item.selected   ?  'choose' : ''}}" wx:for="{{optConditionList}}" wx:for-item="item"
+              wx:key="index" catchtap="optConditionTap" data-item="{{item}}" data-index="{{index}}">{{item.text}}</text>
+          </view>
+        </view>
+        <view class="searchItem">
+          <view class="title">品牌选择</view>
+          <view class="searchGroup">
+            <text class="{{item.selected   ?  'choose' : ''}}" wx:for="{{brandsList}}" wx:for-item="item" wx:key="index"
+              catchtap="brandsTap" data-item="{{item}}" data-index="{{index}}">{{item.text}}</text>
+          </view>
+        </view>
+        <view class="btn">
+          <text bindtap="resetBtn">重置</text>
+          <text bindtap="btn">确定</text>
+          <view></view>
+        </view>
+      </scroll-view>
+    </view>
+  </van-popup>
+</view>

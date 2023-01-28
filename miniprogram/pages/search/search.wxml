@@ -1,0 +1,17 @@
+<view class="searchBg">
+ <loading wx:if="{{loadingShow}}"></loading>
+  <searchPop bind:searchEvent="searchEvent"  bind:searchBtnEvent="searchBtnEvent"></searchPop>
+  <view class="list" wx:for="{{searchData}}" wx:for-item="item" wx:key="index" >
+    <view class="item flex flex-between flex-only-center" catchtap="goH5Page"  data-url="/station?id={{item.stationId}}&stationName={{searchInput.input}}">
+      <view class="flex title flex-column">
+        <view class="name"><text wx:for="{{item.stationName}}" class="{{item == searchInput.input ? 'gjz' : '' }}">{{item}}</text></view>
+        <text class="address">{{item.address}}</text>
+      </view>
+      <view class="flex flex-column flex-only-center" catchtap="goMap" data-lat="{{item.lat}}" data-lng="{{item.lng}}">
+        <image src="../../assets/imgs/navigation.png"></image>
+        <text>{{item.distance}}</text>
+      </view>
+    </view>
+  </view>
+  <van-empty description="搜索数据" wx:if="{{searchData.length==0}}" />
+</view>

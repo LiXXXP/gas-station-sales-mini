@@ -1,0 +1,47 @@
+<view class="station">
+  <loading wx:if="{{!stationData.dataList || loadingShow}}"></loading>
+  <van-sticky>
+    <searchPop toSearch="true" bind:searchBtnEvent="searchBtnEvent"></searchPop>
+    <view class="search flex flex-between flex-only-center menuBg"  wx:if="{{menuShow}}">
+      <van-dropdown-menu class="city" active-color="#D52F17">
+        <van-dropdown-item    value="0" options="{{ intimate.option }}" />
+      </van-dropdown-menu>
+      <van-dropdown-menu class="city" active-color="#D52F17" >
+        <van-dropdown-item   value="{{searchMenu.districtId}}" options="{{ county.option }}" id="county" bind:change="countyChange">
+          <view class="select-btns flex flex-between">
+            <van-button size="small" color="#D52E17" custom-style="width:305rpx;height:60rpx;font-size: 28rpx;border-radius: 15rpx;" plain bindtap="onReset">重置
+            </van-button>
+            <van-button size="small" color="#D52E17" custom-style="width:305rpx;height:60rpx;font-size: 28rpx;border-radius: 15rpx;" bindtap="onConfirm" data-key='searchPopup' data-val='false'>确定</van-button>
+          </view>
+        </van-dropdown-item>
+      </van-dropdown-menu>
+      <van-dropdown-menu class="city" active-color="#D52F17">
+        <van-dropdown-item   value="{{searchMenu.distance}}" options="{{ distance.option }}" bind:change="distanceChange" />
+      </van-dropdown-menu>
+    </view>
+  </van-sticky>
+
+  <!-- 列表 -->
+  <view class="list">
+  <scroll-view scroll-y   style="height: 90vh;" bindscrolltolower="scrollBtn">
+    <view class="list-item flex flex-between flex-only-center" wx:for="{{dataList}}" wx:for-item="item"
+      wx:key="index"   bindtap="goH5Page" data-url="/station?id={{item.stationId}}">
+      <image class="station-img" mode="aspectFill" src="{{item.frontPicture ? imgUrl + '/'+ item.frontPicture : '../../assets/imgs/nopicture.png'}}"></image>
+      <view class="station-info">
+        <text class="name">{{item.stationName}}</text>
+        <view class="tag">
+          <text>{{item.star}}</text>
+          <text wx-if="{{item.advScreen}}">{{item.advScreen == '无' ? '无广告屏' : item.advScreen + '寸以上'}}</text>
+        </view>
+        <text class="address">{{item.address}}</text>
+        <view class="distance flex flex-column flex-only-center" catchtap="goMap" data-lat="{{item.lat}}" data-lng="{{item.lng}}" data-name="{{item.stationName}}" data-address="{{item.address}}">
+          <image class="distance-icon" src="../../assets/imgs/navigation.png"></image>
+          <text>{{item.distance}}</text>
+        </view>
+      </view>
+    </view>
+    <van-empty description="{{stationDatapageNum == 1 ? '暂无数据' :'没有数据了'}}" wx:if="{{stationData.dataList.length==0}}"/>
+
+  </scroll-view>
+   </view>
+</view>

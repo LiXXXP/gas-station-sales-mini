@@ -1,0 +1,109 @@
+/**detail.less**/
+.detail {
+  min-height: 100vh;
+  background: #f7f7f7;
+}
+.detail .station {
+  background: #fff;
+  padding: 40rpx 30rpx 30rpx;
+  box-sizing: border-box;
+  position: relative;
+  margin-bottom: 20rpx;
+}
+.detail .station .name {
+  font-size: 40rpx;
+  font-weight: 600;
+}
+.detail .station .address {
+  color: #515151;
+  font-size: 24rpx;
+  margin: 20rpx 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+.detail .station .distance {
+  position: absolute;
+  right: 30rpx;
+  top: 40rpx;
+}
+.detail .station .distance .distance-icon {
+  width: 48rpx;
+  height: 48rpx;
+}
+.detail .station .distance text {
+  color: #515151;
+  font-size: 24rpx;
+}
+.detail .station .titleImg {
+  width: 320rpx;
+  height: 200rpx;
+  margin-right: 20rpx;
+  border-radius: 10rpx;
+}
+.detail .detailText {
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+.detail .detailText .detailList {
+  padding: 30rpx;
+}
+.detail .detailText .detailList > view {
+  display: flex;
+}
+.detail .detailText .detailList > view text {
+  border: 2rpx solid #f5f5f5;
+  display: flex;
+  flex: 1;
+  padding: 10rpx 20rpx;
+  font-size: 24rpx;
+  font-weight: 400;
+  color: #515151;
+}
+.detail .tab {
+  width: 100%;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+.detail .tab .tabText image {
+  width: 60rpx;
+  height: 60rpx;
+  padding-bottom: 10rpx;
+}
+.detail .tab .tabText text {
+  font-size: 24rpx;
+  font-weight: 400;
+  color: #515151;
+}
+.detail .tab .tabBg {
+  width: 100%;
+  padding: 0 30rpx;
+}
+.detail .help {
+  background: #fff;
+  margin-bottom: 50rpx;
+}
+.detail .help text {
+  font-size: 24rpx;
+  font-weight: 400;
+  color: #515151;
+  padding: 30rpx;
+  display: inline-block;
+}
+.detail .title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #131313;
+  padding: 30rpx 30rpx 0 30rpx;
+}
+.detail .text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}

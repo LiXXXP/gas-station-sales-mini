@@ -1,0 +1,24 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/user/user",
+          "pathName": "pages/openWeb/openWeb",
+          "query": "url=https://dev.h5.rongyaomedia.com/#/ambitus?tagName=汽车维修&innerIcon=assets/Icon-map-Repair-shops.svg&lat=39.909145&lng=116.397445",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,4 @@
+<view>
+  <web-view wx:if="{{mapUrl}}" src="{{mapUrl}}" bindmessage="bindmessage"></web-view>
+  <loading wx:if="{{loadingShow}}"></loading>
+</view>

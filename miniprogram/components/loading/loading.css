@@ -1,0 +1,24 @@
+.loading {
+  width: 100vw;
+  position: fixed;
+  z-index: 9999;
+  top: 20%;
+}
+.loading .loadingImg {
+  width: 358rpx;
+  height: 182rpx;
+  display: inline-block;
+}
+.loading > view {
+  position: relative;
+  z-index: 500;
+  flex-direction: column;
+  align-items: center;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: center;
+}
+.loading > view > view {
+  color: #515151;
+  padding-top: 20rpx;
+}

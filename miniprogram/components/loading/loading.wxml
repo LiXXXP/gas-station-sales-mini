@@ -1,0 +1,6 @@
+<view class="loading">
+  <view>
+    <image class="loadingImg" src="../../assets/imgs/loading.gif"></image>
+    <view>正在加载，请耐心等待...</view>
+  </view>
+</view>

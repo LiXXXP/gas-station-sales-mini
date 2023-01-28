@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
+    "van-dropdown-item": "@vant/weapp/dropdown-item/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-empty": "@vant/weapp/empty/index",
+    "searchPop": "../../components/searchPop/searchPop",
+    "loading": "../../components/loading/loading"
+  },
+  "navigationBarTitleText": "搜索"
+}

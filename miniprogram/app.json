@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/loading/loading",
+    "pages/login/login",
+    "pages/detail/detail",
+    "pages/station/station",
+    "pages/index/index",
+    "pages/user/user",
+    "pages/information/information",
+    "pages/about/about",
+    "pages/law/law",
+    "pages/conceal/conceal",
+    "pages/search/search",
+    "pages/openWeb/openWeb",
+    "pages/openLocation/openLocation",
+    "pages/position/position"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于加油站位置导航"
+    }
+  },
+  "window": {
+    "navigationBarTitleText": "融耀智屏",
+    "backgroundColor": "#fff",
+    "backgroundTextStyle": "light",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#fff"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#FB3834",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "iconPath": "assets/imgs/home.png",
+        "selectedIconPath": "assets/imgs/home-active.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "iconPath": "assets/imgs/station.png",
+        "selectedIconPath": "assets/imgs/station-active.png",
+        "pagePath": "pages/station/station",
+        "text": "加油站"
+      },
+      {
+        "iconPath": "assets/imgs/user.png",
+        "selectedIconPath": "assets/imgs/user-active.png",
+        "pagePath": "pages/user/user",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "sitemapLocation": "sitemap.json"
+}

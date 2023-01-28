@@ -1,0 +1,32 @@
+<view class="user default-text-color">
+  <view class="info flex flex-between flex-only-center">
+    <view class="title">个人中心</view>
+    <image class="bg" src="../../assets/imgs/Img-bk.png"></image>
+    <view class="user" wx:if="{{userStatus}}">
+      <view class="name">{{userStatus.name}}</view>
+      <view class="role">业务员 ｜ {{userStatus.mobile}}</view>
+    </view>
+    <view wx:else class="login" bindtap="toLogin">
+      <text>登录</text>
+    </view>
+    <!-- 取微信头像 -->
+     <view class="logo">
+       <open-data type="userAvatarUrl"></open-data>
+     </view>
+    <!-- <image src="{{avatarUrl || '../../assets/imgs/user.png'}}" class="logo"></image> -->
+  </view>
+  <view class="row flex flex-between flex-only-center" bindtap="goToInformation">
+    <view class="flex flex-only-center">
+      <image src="../../assets/imgs/site.png" class="row-icon"></image>
+      <text>站点信息更新</text>
+    </view>
+    <image src="../../assets/imgs/right.png" class="right"></image>
+  </view>
+  <view class="row flex flex-between flex-only-center" bindtap="goToAbout">
+    <view class="flex flex-only-center">
+      <image src="../../assets/imgs/about.png" class="row-icon"></image>
+      <text>关于产品</text>
+    </view>
+    <image src="../../assets/imgs/right.png" class="right"></image>
+  </view>
+</view>
